@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/submit" method="POST">
+      <div class="container">
+        <div class="input_container">
+          <p>Your Name:</p>
+          <input id="Name" type="text" name="name" placeholder="Full Name" />
+        </div>
+        <!-- end of iput container -->
+        <div class="input_container">
+          <p>Dojo Locations:</p>
+          <div class="btn-group">
+            <button
+              type="button"
+              id="Dropdownmenuloc"
+              class="btn btn-secondary"
+              name="Location"
+            >
+              Location
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'Online Full-time','locin')"
+                href="#"
+                >Online Full-time</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'Online Part-time','locin')"
+                href="#"
+                >Online Part-time</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'Bellevue','locin')"
+                href="#"
+                >Bellevue</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'Boise','locin')"
+                href="#"
+                >Boise</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'Chicago','locin')"
+                href="#"
+                >Chicago</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'Dallas','locin')"
+                href="#"
+                >Dallas</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'LA','locin')"
+                href="#"
+                >LA</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenuloc', 'San Jose','locin')"
+                href="#"
+                >San Jose</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- end of iput container -->
+        <div class="input_container">
+          <p>Dojo Locations:</p>
+          <div class="btn-group">
+            <button
+              type="button"
+              id="Dropdownmenulang"
+              class="btn btn-secondary"
+            >
+              Favorite Language:
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Javascript','langin')"
+                href="#"
+                >Javascript</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'CSS','langin')"
+                href="#"
+                >CSS</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'HTML','langin')"
+                href="#"
+                >HTML</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Python','langin')"
+                href="#"
+                >Python</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Ruby','langin')"
+                href="#"
+                >Ruby</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Java','langin')"
+                href="#"
+                >Java</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Assembly','langin')"
+                href="#"
+                >Assembly</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'C++','langin')"
+                href="#"
+                >C++</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Russian','langin')"
+                href="#"
+                >Russian</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Esperanto','langin')"
+                href="#"
+                >Esperanto</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Abyssal','langin')"
+                href="#"
+                >Abyssal</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Celestial','langin')"
+                href="#"
+                >Celestial</a
+              >
+              <a
+                class="dropdown-item"
+                onclick="changedrop('Dropdownmenulang', 'Thieves\' cant','langin')"
+                href="#"
+                >Thieves' cant</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- end of iput container -->
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Comment (optional)</span>
+          </div>
+          <textarea
+            class="form-control"
+            name="comment"
+            aria-label="With textarea"
+          ></textarea>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            name="checked"
+            type="checkbox"
+            value="true"
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Do you want to check this box?
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="radios"
+            id="inlineRadio1"
+            value="option1"
+          />
+          <label class="form-check-label" for="inlineRadio1"
+            >this Here's a radio Button</label
+          >
+        </div>
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="radios"
+            id="inlineRadio2"
+            value="option2"
+          />
+          <label class="form-check-label" for="inlineRadio2"
+            >So is this (pick me)</label
+          >
+        </div>
+        <div class="button_container">
+          <input class="btn btn-primary" type="submit" value="Submit" />
+        </div>
+      </div>
+      <input type="hidden" id="locin" name="location" value="" />
+      <input type="hidden" id="langin" name="language" value="" />
+    </form>
+    <!-- end of container -->
+  </body>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    function changedrop(targetdrop, targetbut, inp) {
+      console.log(targetdrop, targetbut);
+      // newstr = document.getElementById(targetbut).innerHTML;
+      document.getElementById(targetdrop).innerHTML = targetbut;
+      document.getElementById(inp).value = targetbut;
+    }
+  </script>
+</html>
